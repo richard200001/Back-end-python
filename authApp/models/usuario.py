@@ -3,9 +3,7 @@ from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin, BaseU
 from django.contrib.auth.hashers import make_password
 class UserManager(BaseUserManager):
     def create_user(self, username, password=None):
-        """
-        Creates and saves a user with the given username and password.
-        """
+        
         if not username:
             raise ValueError('Users must have an username')
         user = self.model(username=username)
@@ -13,9 +11,7 @@ class UserManager(BaseUserManager):
         user.save(using=self._db)
         return user
     def create_superuser(self, username, password):
-        """
-        Creates and saves a superuser with the given username and password.
-        """
+        
         user = self.create_user(
             username=username,
         password=password,
@@ -44,3 +40,4 @@ class Usuario(AbstractBaseUser, PermissionsMixin):
         super().save(**kwargs)
     objects = UserManager()
     USERNAME_FIELD = 'username'
+    
