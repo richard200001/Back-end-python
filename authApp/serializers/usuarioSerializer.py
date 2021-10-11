@@ -28,3 +28,12 @@ class UsuarioSerializer(serializers.ModelSerializer):
             'fechaRegistro': user.fechaRegistro,
             
         }
+    def update(self,instance,validated_data):
+        
+        instance.nombre = validated_data.get('nombre',instance.nombre)
+        instance.apellido = validated_data.get('apellido',instance.apellido)
+        instance.fechaNacimiento = validated_data.get('fechaNacimiento',instance.fechaNacimiento)
+        instance.celular = validated_data.get('celular',instance.celular)
+        instance.email = validated_data.get('email',instance.email)
+        instance.save()
+        return instance
