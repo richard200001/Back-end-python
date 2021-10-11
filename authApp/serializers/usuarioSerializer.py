@@ -37,3 +37,10 @@ class UsuarioSerializer(serializers.ModelSerializer):
         instance.email = validated_data.get('email',instance.email)
         instance.save()
         return instance
+<<<<<<< HEAD
+=======
+
+
+
+
+>>>>>>> 21742c99b2d7519b58743bd6099efa828fd136c8
