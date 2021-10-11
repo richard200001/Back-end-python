@@ -14,11 +14,11 @@ class UsuarioSerializer(serializers.ModelSerializer):
 
     def to_representation(self, obj):
         user = Usuario.objects.get(id=obj.id)
-        
+
         return {
             'id': user.id,
             'username': user.username,
-            'name': user.name,
+            'nombre': user.nombre,
             'apellido': user.apellido,
             'fechaNacimiento': user.fechaNacimiento,
             'celular': user.celular,
