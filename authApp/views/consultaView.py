@@ -12,3 +12,5 @@ class consultaView(views.APIView):
         consult=Consulta.objects.all()
         serializer=ConsultaSerializer(consult,many=True)
         return Response(serializer.data,status=status.HTTP_200_OK)
+
+    
